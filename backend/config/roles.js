@@ -1,0 +1,5 @@
+module.exports = {
+  ADMIN: "ADMIN",
+  COMMANDER: "COMMANDER",
+  LOGISTICS: "LOGISTICS"
+};
