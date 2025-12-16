@@ -3,6 +3,9 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
 
+// Import all models to ensure they're registered before routes use them
+require("./models");
+
 const app = express();
 connectDB();
 

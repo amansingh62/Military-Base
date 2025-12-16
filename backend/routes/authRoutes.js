@@ -8,7 +8,7 @@ router.post(
   "/register",
   auth,
   rbac("ADMIN"),
-  ctrl.registerUser
+  ctrl.register
 );
 
 router.post("/login", ctrl.login);
