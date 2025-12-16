@@ -4,19 +4,20 @@ import ProtectedRoute from "./auth/ProtectedRoute";
 import Navbar from "./components/Navbar";
 
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./components/Dashboard";
 import Purchases from "./pages/Purchases";
 import Transfers from "./pages/Transfers";
+import Assignments from "./pages/Assignments";
 
 export default function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          {/* Public Route */}
+          
           <Route path="/login" element={<Login />} />
 
-          {/* Dashboard */}
+          
           <Route
             path="/"
             element={
@@ -27,7 +28,7 @@ export default function App() {
             }
           />
 
-          {/* Purchases */}
+          
           <Route
             path="/purchases"
             element={
@@ -38,13 +39,24 @@ export default function App() {
             }
           />
 
-          {/* Transfers */}
+          
           <Route
             path="/transfers"
             element={
               <ProtectedRoute>
                 <Navbar />
                 <Transfers />
+              </ProtectedRoute>
+            }
+          />
+
+          
+          <Route
+            path="/assignments"
+            element={
+              <ProtectedRoute>
+                <Navbar />
+                <Assignments />
               </ProtectedRoute>
             }
           />
